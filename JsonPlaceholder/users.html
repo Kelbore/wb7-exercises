@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -15,23 +16,24 @@
             <a href="./todo.html">Todo</a>
         </li>
         <li>
-            <a href="./users.html">Todo</a>
+            <a href="./users.html">Users</a>
         </li>
     </nav>
     <main>
-        <input type="number" id="todoInput">
-        <button id="goBtn">Go</button>
-        <table id="usersTable">
+        <input type="number" id="usersInput">
+        <button id="usersBtn">Click</button>
+        <table id="usersTable" style="display: none;">
            <thead>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>id</td>
+              <td>name</td>
+              <td>username</td>
+              <td>email</td>
            </thead>
            <tbody>
               
            </tbody>
         </table>
     </main>
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/users.js"></script>
 </body>
 </html>
