@@ -2,6 +2,7 @@
 
 const todoIdEl = document.getElementById('todoId');
 const addBtnEl = document.getElementById('addBtn');
+const cancelBtn = document.getElementById('cancelBtn');
 
 addBtnEl.addEventListener('click', () => {
     const todoId = todoIdEl.value;
@@ -15,7 +16,25 @@ addBtnEl.addEventListener('click', () => {
 });
 
 updateBtn.addEventListener('click', () => {
+    const id = todoIdEl.value;
     const updatedFile = {
-        
+      id: todoIdEl.value,  
+      userId: document.getElementById('userId').value,
+      title: document.getElementById('title').value,
+      completed: document.getElementById('completed').value
     }
+
+    fetch(` http://localhost:3000/todos/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(updatedFile),
+        headers: {
+            'Content-type': 'application/json; charset=utf-8'
+        }
+    }).then((response) => response.json()).then((data) => {
+        console.log(data);
+    })
+});
+
+cancelBtn.addEventListener('click', () => {
+    window.open('./index.html');
 })
