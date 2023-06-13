@@ -36,5 +36,5 @@ updateBtn.addEventListener('click', () => {
 });
 
 cancelBtn.addEventListener('click', () => {
-    window.open('./index.html');
+    window.location.href = './index.html';
 })
